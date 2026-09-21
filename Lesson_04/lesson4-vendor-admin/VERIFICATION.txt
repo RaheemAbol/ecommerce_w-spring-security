@@ -1,0 +1,10 @@
+Browser verification passed.
+
+- Customer has no management UI; all six vendor/product POST, PUT and DELETE attempts with valid CSRF return 403.
+- Customer shopping, quantity update, session reload and existing simulated checkout remain functional.
+- Admin vendor list, GET-by-ID edit, POST create and PUT update work through the actual UI.
+- New vendors populate the product selector; product CRUD uses the relationship; deleting a linked vendor gives a clear 409 without removing it.
+- Vendor rename refreshes associated product labels; deleting product then vendor succeeds and updates the selector.
+- Mobile vendor view has no page overflow; switching from admin to customer removes every management view and editor.
+
+Production build passed with npm ci and npm run build.
